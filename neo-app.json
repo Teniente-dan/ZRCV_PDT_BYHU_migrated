@@ -1,0 +1,114 @@
+{
+  "welcomeFile": "/index.html",
+  "routes": [
+    {
+      "path": "/sap/opu/odata",
+      "target": {
+        "type": "destination",
+        "name": "MODELCOMPANY_V2_SUBURBIA_CLONING",
+        "entryPath": "/sap/opu/odata"
+      },
+      "description": "MODELCOMPANY_V2_SUBURBIA_dev_100"
+    },
+    {
+      "path": "/sap/bc/ui5_ui5",
+      "target": {
+        "type": "destination",
+        "name": "MODELCOMPANY_V2_SUBURBIA_CLONING",
+        "entryPath": "/sap/bc/ui5_ui5"
+      },
+      "description": "MODELCOMPANY_V2_SUBURBIA_dev_100"
+    },
+    {
+      "path": "/resources/sap/retail/store/lib/reuses1",
+      "target": {
+        "type": "destination",
+        "name": "MODELCOMPANY_V2_SUBURBIA_CLONING",
+        "entryPath": "/sap/bc/ui5_ui5/sap/rtst_reuses1",
+        "preferLocal": true
+      },
+      "description": "sap/retail/store/lib/reuses1 Reuse Library"
+    },
+    {
+      "path": "/resources/sap/retail/store/lib/reuses1",
+      "target": {
+        "type": "destination",
+        "name": "MODELCOMPANY_V2_SUBURBIA_MC",
+        "entryPath": "/sap/bc/ui5_ui5/sap/rtst_reuses1",
+        "preferLocal": true
+      },
+      "description": "sap/retail/store/lib/reuses1 Reuse Library"
+    },
+    {
+      "path": "/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/resources",
+        "version": "1.52.16"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/test-resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/test-resources",
+        "version": "1.52.16"
+      },
+      "description": "SAPUI5 Test Resources"
+    },
+    {
+      "path": "/resources/sap/retail/store/lib/reuses1",
+      "target": {
+        "type": "destination",
+        "name": "MODELCOMPANY_V2_SUBURBIA_MC",
+        "entryPath": "/sap/bc/ui5_ui5/sap/rtst_reuses1",
+        "preferLocal": true
+      },
+      "description": "sap/retail/store/lib/reuses1 Reuse Library"
+    },
+    {
+      "path": "/dist/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/resources",
+        "version": "1.52.16"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/dist/test-resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/test-resources",
+        "version": "1.52.16"
+      },
+      "description": "SAPUI5 Test Resources"
+    },
+    {
+      "path": "/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/resources",
+        "version": "1.52.16"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/test-resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/test-resources",
+        "version": "1.52.16"
+      },
+      "description": "SAPUI5 Test Resources"
+    }
+  ],
+  "sendWelcomeFileRedirect": true
+}

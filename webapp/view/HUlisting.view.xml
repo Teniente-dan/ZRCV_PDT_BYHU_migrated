@@ -1,0 +1,68 @@
+<mvc:View controllerName="retailstore.ZRCV_PDT_byHU.controller.HUlisting" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:u="sap.uxap"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<App id="idAppControl">
+		<pages>
+			<Page title="{i18n>title}">
+				<VBox id="HUSection">
+					<FlexBox renderType="Bare" alignItems="Center" justifyContent="Center">
+						<Label text="{= ${device>/system/phone} ? ${i18n>TUNumberInputMobile}: ${i18n>TUNumberInput}}" class="sapUiSmallMarginEnd"/>
+						<Input id="TUNumberInput" width="60%" placeholder="" value="" change="TUscanned"/>
+					</FlexBox>
+					<FlexBox id="messageStrip" renderType="Bare" alignItems="Center" justifyContent="Center"></FlexBox>
+				</VBox>
+				<content>
+					<VBox id="materials" visible="false" class="sapUiSizeCompact">
+						<ObjectHeader id="TUHeaderInfo" responsive="true" intro="{/TU_ID}" title="{/STORE_DES}{/STORE_ID}" backgroundDesign="Translucent">
+							<attributes>
+								<ObjectAttribute title="{i18n>TotalHu}" text="{/TOTAL_HU}"/>
+								<ObjectAttribute id="ProcessedHU" title="{i18n>posted}" text="{/PROCESSED_HU}"/>
+								<ObjectAttribute id="unprocessedHU" title="{i18n>unposted}" text="{/TRANSIT_HU}"/>
+							</attributes>
+						</ObjectHeader>
+						<FlexBox renderType="Bare" alignItems="Center" justifyContent="Start">
+							<Label id="ScanMaterialLabel" class="sapUiSmallMarginBegin" text="{i18n>HUNumber}"/>
+							<Input id="testScan" change="onHUScanInput" width="{= ${device>/system/phone} ? '40%' : '20%'}"/>
+						</FlexBox>
+						<FlexBox id="messageStrip2" renderType="Bare" alignItems="Center" justifyContent="Start"></FlexBox>
+						<Panel>
+							<FlexBox alignItems="Start" justifyContent="Center">
+								<Table id="materialTable2" class="sapUiSizeCompact" updateFinished="setFocus">
+									<columns >
+										<Column ><Text text="{i18n>HUNumber}"/>
+										</Column>
+										<Column ><Text text="{i18n>Pieces}"/>
+										</Column>
+										<Column ><Text text="{i18n>Checked}"/>
+										</Column>
+										<Column hAlign="Center"><Text text="{i18n>Status}"/>
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem >
+											<cells>
+												<Text text="{/HU_EXT}"/>
+												<Text text="{/TOTAL_ITEM}"/>
+												<Switch id="toggle">
+													<layoutData>
+														<FlexItemData growFactor="1"/>
+													</layoutData>
+												</Switch>
+												<Text text="{path:'/STATUS', formatter:'.formatter.setStatus'}"/>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</FlexBox>
+						</Panel>
+					</VBox>
+				</content>
+				<footer>
+					<Toolbar id="footer">
+						<ToolbarSpacer/>
+						<Button id="review" text="{i18n>Review}" enabled="false" type="Accept" press="onReview"/>
+					</Toolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

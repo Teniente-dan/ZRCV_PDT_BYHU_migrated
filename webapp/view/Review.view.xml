@@ -1,0 +1,56 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="retailstore.ZRCV_PDT_byHU.controller.Review"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:u="sap.uxap">
+	<App>
+		<pages>
+			<Page title="{i18n>ReviewHU}" showNavButton="true" navButtonPress="backToScan">
+				<content>
+					<VBox class="sapUiSizeCompact">
+						<Panel>
+							<FlexBox alignItems="Start" justifyContent="Center">
+								<Table id="HuTable" items="{/results}" growingThreshold="1500" growing="true" noDataText="{i18n>NoHU}" class="sapUiSizeCompact">
+									<headerToolbar>
+										<Toolbar >
+											<Label text="{ path: '/results' , formatter:'.formatter.totalFormatter' }"></Label>
+											<ToolbarSpacer/>
+											<SearchField placeholder="HU Number" search="onSearch" width="20%"/>
+											<Button icon="sap-icon://filter" press="openFilter"/>
+										</Toolbar>
+									</headerToolbar>
+									<columns >
+										<Column ><Text text="{i18n>HUNumber}"/>
+										</Column>
+										<Column ><Text text="{i18n>Pieces}"/>
+										</Column>
+										<Column hAlign="Center"><Text text="{i18n>Status}"/>
+										</Column>
+										<Column hAlign="Center">
+											<Text ></Text>
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem >
+											<cells>
+												<Text text="{HU_EXT}"/>
+												<Text text="{TOTAL_ITEM}"/>
+												<Text text="{path:'STATUS', formatter:'.formatter.setStatus'}"/>
+													<Button id="deleteProduct" icon="sap-icon://delete" press="onDelete"
+													visible="{parts: [{path: 'STATUS'}],formatter: '.formatter.deleteVisible'}"></Button>
+					
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</FlexBox>
+						</Panel>
+					</VBox>
+				</content>
+				<footer>
+					<Toolbar id="footer">
+						<ToolbarSpacer/>
+						<Button id="post" text="{i18n>post}" type="Accept" press="onPost"/>
+					</Toolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

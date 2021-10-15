@@ -1,0 +1,47 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZRETAILSTORE_RECEIVE_PRODUCT_SRV" xml:lang="en"
+			sap:schema-version="1">
+			<EntityType Name="TUHeader" sap:content-version="1">
+				<Key><PropertyRef Name="TU_ID"/></Key><Property Name="TU_ID" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Transport ID" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CREATED_BY" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="User" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CREATION_TIMESTAMP" Type="Edm.DateTime" Precision="0" sap:unicode="false" sap:label="Timestamp" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LAST_CHANGE_BY" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="User" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LAST_CHANGE_TIMESTAMP" Type="Edm.DateTime" Precision="0" sap:unicode="false" sap:label="Timestamp" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="STATUS" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Status" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="TOTAL_HU" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Total Handling Unit"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="PROCESSED_HU" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Total HU in processed"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="TRANSIT_HU" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Total HU in transit"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="STORE_ID" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Plant" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="STORE_DES" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Plant Description"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MESSAGE" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Message" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="HUInfoSet" Relationship="ZRETAILSTORE_RECEIVE_PRODUCT_SRV.TUToHUInoSet" FromRole="FromRole_TUToHUInoSet"
+					ToRole="ToRole_TUToHUInoSet"/></EntityType>
+			<EntityType Name="HUInfo" sap:content-version="1">
+				<Key><PropertyRef Name="TU_ID"/><PropertyRef Name="HU_INT"/></Key><Property Name="TU_ID" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Transport Unit"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="HU_INT" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Internal Handling Unit Number"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="HU_EXT" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false"
+					sap:label="External Handling Unit Identification" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CREATED_BY" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="User" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CREATION_TIMESTAMP" Type="Edm.DateTime" Precision="0" sap:unicode="false" sap:label="Creation Time Stamp"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LAST_CHANGE_BY" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Change By User"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LAST_CHANGE_TIMESTAMP" Type="Edm.DateTime" Precision="0" sap:unicode="false" sap:label="Change By Time Stamp"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="STATUS" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="HU Status" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="STORE_ID" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Plant" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="FLAG" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Flag" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="TOTAL_ITEM" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Total Material"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<Association Name="TUToHUInoSet" sap:content-version="1"><End Type="ZRETAILSTORE_RECEIVE_PRODUCT_SRV.TUHeader" Multiplicity="1" Role="FromRole_TUToHUInoSet"/><End Type="ZRETAILSTORE_RECEIVE_PRODUCT_SRV.HUInfo" Multiplicity="*" Role="ToRole_TUToHUInoSet"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_TUToHUInoSet"><PropertyRef Name="TU_ID"/></Principal>
+					<Dependent Role="ToRole_TUToHUInoSet"><PropertyRef Name="TU_ID"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityContainer Name="ZRETAILSTORE_RECEIVE_PRODUCT_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="TUHeaders" EntityType="ZRETAILSTORE_RECEIVE_PRODUCT_SRV.TUHeader" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="HUInfoSet" EntityType="ZRETAILSTORE_RECEIVE_PRODUCT_SRV.HUInfo" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+				<AssociationSet Name="TUToHUInoSet" Association="ZRETAILSTORE_RECEIVE_PRODUCT_SRV.TUToHUInoSet" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="TUHeaders" Role="FromRole_TUToHUInoSet"/><End EntitySet="HUInfoSet" Role="ToRole_TUToHUInoSet"/></AssociationSet>
+			</EntityContainer><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZRETAILSTORE_RECEIVE_PRODUCT_SRV/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZRETAILSTORE_RECEIVE_PRODUCT_SRV/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

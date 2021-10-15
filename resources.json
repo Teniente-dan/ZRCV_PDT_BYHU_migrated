@@ -1,0 +1,288 @@
+{
+    "resources": [
+        {
+            "name": "Component-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": "controller/HUlisting-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/HUlisting.controller.js"
+        },
+        {
+            "name": "controller/Review-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/Review.controller.js"
+        },
+        {
+            "name": "controller/SiteSelectDialog-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/SiteSelectDialog.js"
+        },
+        {
+            "name": "css/style-dbg.css",
+            "isDebug": true
+        },
+        {
+            "name": "css/style.css"
+        },
+        {
+            "name": "di.code-validation.core_issues.json"
+        },
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "i18n/i18n_es.properties",
+            "raw": "i18n/i18n.properties",
+            "locale": "_es"
+        },
+        {
+            "name": "index.html"
+        },
+        {
+            "name": "localService/metadata.xml"
+        },
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": "model/Facade-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "model/Facade.js"
+        },
+        {
+            "name": "model/Formatter-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "model/Formatter.js"
+        },
+        {
+            "name": "model/models-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "model/models.js"
+        },
+        {
+            "name": "neo-app.json"
+        },
+        {
+            "name": "resources.json",
+            "merged": true
+        },
+        {
+            "name": "tmp/Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "tmp/Component.js"
+        },
+        {
+            "name": "tmp/controller/HUlisting.controller.js"
+        },
+        {
+            "name": "tmp/controller/Review.controller.js"
+        },
+        {
+            "name": "tmp/controller/SiteSelectDialog.js"
+        },
+        {
+            "name": "tmp/css/style.css"
+        },
+        {
+            "name": "tmp/i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "tmp/i18n/i18n_es.properties",
+            "raw": "i18n/i18n.properties",
+            "locale": "_es"
+        },
+        {
+            "name": "tmp/index.html"
+        },
+        {
+            "name": "tmp/localService/metadata.xml"
+        },
+        {
+            "name": "tmp/manifest.json"
+        },
+        {
+            "name": "tmp/model/Facade.js"
+        },
+        {
+            "name": "tmp/model/Formatter.js"
+        },
+        {
+            "name": "tmp/model/models.js"
+        },
+        {
+            "name": "tmp/resources.json",
+            "merged": true
+        },
+        {
+            "name": "tmp/utils/Constants.js"
+        },
+        {
+            "name": "tmp/utils/Context.js"
+        },
+        {
+            "name": "tmp/utils/DataManager.js"
+        },
+        {
+            "name": "tmp/utils/ErrorMessage.js"
+        },
+        {
+            "name": "tmp/utils/NavigationHandler.js"
+        },
+        {
+            "name": "tmp/utils/Utilities.js"
+        },
+        {
+            "name": "tmp/utils/formatter.js"
+        },
+        {
+            "name": "tmp/view/HUlisting.view.xml"
+        },
+        {
+            "name": "tmp/view/Review.view.xml"
+        },
+        {
+            "name": "tmp/view/StoreSelectDialog.js"
+        },
+        {
+            "name": "tmp/view/fragment/filter.fragment.xml"
+        },
+        {
+            "name": "tmp-dbg/Component.js"
+        },
+        {
+            "name": "tmp-dbg/controller/HUlisting.controller.js"
+        },
+        {
+            "name": "tmp-dbg/controller/Review.controller.js"
+        },
+        {
+            "name": "tmp-dbg/controller/SiteSelectDialog.js"
+        },
+        {
+            "name": "tmp-dbg/css/style.css"
+        },
+        {
+            "name": "tmp-dbg/model/Facade.js"
+        },
+        {
+            "name": "tmp-dbg/model/Formatter.js"
+        },
+        {
+            "name": "tmp-dbg/model/models.js"
+        },
+        {
+            "name": "tmp-dbg/utils/Constants.js"
+        },
+        {
+            "name": "tmp-dbg/utils/Context.js"
+        },
+        {
+            "name": "tmp-dbg/utils/DataManager.js"
+        },
+        {
+            "name": "tmp-dbg/utils/ErrorMessage.js"
+        },
+        {
+            "name": "tmp-dbg/utils/NavigationHandler.js"
+        },
+        {
+            "name": "tmp-dbg/utils/Utilities.js"
+        },
+        {
+            "name": "tmp-dbg/utils/formatter.js"
+        },
+        {
+            "name": "tmp-dbg/view/StoreSelectDialog.js"
+        },
+        {
+            "name": "utils/Constants-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "utils/Constants.js"
+        },
+        {
+            "name": "utils/Context-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "utils/Context.js"
+        },
+        {
+            "name": "utils/DataManager-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "utils/DataManager.js"
+        },
+        {
+            "name": "utils/ErrorMessage-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "utils/ErrorMessage.js"
+        },
+        {
+            "name": "utils/NavigationHandler-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "utils/NavigationHandler.js"
+        },
+        {
+            "name": "utils/Utilities-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "utils/Utilities.js"
+        },
+        {
+            "name": "utils/formatter-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "utils/formatter.js"
+        },
+        {
+            "name": "view/HUlisting.view.xml"
+        },
+        {
+            "name": "view/Review.view.xml"
+        },
+        {
+            "name": "view/StoreSelectDialog-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "view/StoreSelectDialog.js"
+        },
+        {
+            "name": "view/fragment/filter.fragment.xml"
+        }
+    ]
+}

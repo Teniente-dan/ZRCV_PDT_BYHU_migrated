@@ -1,0 +1,24 @@
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:ndc="sap.ndc">
+<Dialog showHeader="true" stretch="false" title="Filter HU" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form"
+	xmlns:layout="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+
+	<buttons>
+		<Button press="onFilterSelect" text="{i18n>ok}" type="Transparent"/>
+	</buttons>
+	<content>
+			<f:SimpleForm
+		editable="true"
+		layout="ResponsiveGridLayout"
+		labelSpanL="4"
+		labelSpanM="4">
+		<f:content>
+	<CheckBox text="{i18n>InProgress}" selected="{filtersModel>/InProgress}" select="InProgressSelected"/>
+		<CheckBox text="{i18n>InTransit}" selected="{filtersModel>/InTransit}" select="IntransitSelected" />
+		<CheckBox text="{i18n>processed}" selected="{filtersModel>/Processed}" select="ProcessedSelected" />
+			</f:content>
+	</f:SimpleForm>
+	</content>
+</Dialog>
+</core:FragmentDefinition>
