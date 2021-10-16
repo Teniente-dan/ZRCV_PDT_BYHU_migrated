@@ -194,13 +194,29 @@ sap.ui.define(
 					var sServiceUrl = this.getView().getModel().sServiceUrl;
 					//	var sServiceUrl = "/sap/opu/odata/sap/ZRETAILSTORE_RECEIVE_PRODUCT_SRV";
 					var oModel = new sap.ui.model.odata.ODataModel(sServiceUrl, true);
-					var sPath = "/TUHeaders('" + TU + "')";
+					// var sPath = "/TUHeaders('" + TU + "')";
+					var sPath = "/TUHeaders";
 					self._navigationHandler.showBusyDialog();
 					oModel.read(sPath, {
 						success: function (oData) {
 							self._navigationHandler.hideBusyDialog();
 							var TUHeaderModel = new sap.ui.model.json.JSONModel();
-
+//BORRAR >
+							oData = {
+								TU_ID: '100000000093',
+								CREATED_BY: 'MC_MASTER',
+								LAST_CHANGE_BY: 'MC_MASTER',
+								CREATION_TIMESTAMP: '20,190,722,165,209',
+								LAST_CHANGE_TIMESTAMP: '20,190,722,165,209',
+								STATUS: '002',
+								TOTAL_HU: '10',
+								PROCESSED_HU: '0',
+								TRANSIT_HU: '5',
+								STORE_ID: '0491',
+								STORE_DES: 'test'
+							  };
+							
+//BORRAR <
 							TUHeaderModel.setData(oData);
 							that.getOwnerComponent().getModel("TUHeaderModel").setData(oData);
 							that.getView().byId("TUHeaderInfo").setModel(TUHeaderModel);

@@ -1,1 +1,158 @@
-{"_version":"1.8.0","sap.app":{"id":"retailstore.ZRCV_PDT_byHU","type":"application","i18n":"i18n/i18n.properties","applicationVersion":{"version":"1.0.0"},"title":"{{appTitle}}","description":"{{appDescription}}","sourceTemplate":{"id":"servicecatalog.connectivityComponentForManifest","version":"0.0.0"},"dataSources":{"ZRETAILSTORE_RECEIVE_PRODUCT_SRV":{"uri":"/sap/opu/odata/sap/ZRETAILSTORE_RECEIVE_PRODUCT_SRV/","type":"OData","settings":{"odataVersion":"2.0","localUri":"localService/metadata.xml"}}}},"sap.ui":{"technology":"UI5","icons":{"icon":"","favIcon":"","phone":"","phone@2":"","tablet":"","tablet@2":""},"deviceTypes":{"desktop":true,"tablet":true,"phone":true},"supportedThemes":["sap_hcb","sap_belize"]},"sap.ui5":{"rootView":{"viewName":"retailstore.ZRCV_PDT_byHU.view.HUlisting","type":"XML"},"dependencies":{"minUI5Version":"1.30.0","libs":{"sap.m":{},"sap.ui.core":{},"sap.ui.layout":{},"sap.ushell":{"lazy":false},"sap.retail.store.lib.reuses1":{"lazy":true}}},"contentDensities":{"compact":true,"cozy":true},"models":{"i18n":{"type":"sap.ui.model.resource.ResourceModel","settings":{"bundleName":"retailstore.ZRCV_PDT_byHU.i18n.i18n"}},"siteModel":{"uri":"/sap/opu/odata/sap/ZRETAILSTORE_RECEIVE_PRODUCT_SRV/","type":"sap.ui.model.odata.v2.ODataModel","settings":{"defaultOperationMode":"Server","defaultBindingMode":"OneWay","defaultCountMode":"Request"},"dataSource":"ZRETAILSTORE_RECEIVE_PRODUCT_SRV","preload":true},"":{"uri":"/sap/opu/odata/sap/ZRETAILSTORE_RECEIVE_PRODUCT_SRV/","type":"sap.ui.model.odata.v2.ODataModel","settings":{"defaultOperationMode":"Server","defaultBindingMode":"OneWay","defaultCountMode":"Request"},"dataSource":"ZRETAILSTORE_RECEIVE_PRODUCT_SRV","preload":true}},"resources":{"css":[{"uri":"css/style.css"}]},"routing":{"config":{"routerClass":"sap.m.routing.Router","viewType":"XML","async":true,"viewPath":"retailstore.ZRCV_PDT_byHU.view","controlAggregation":"pages","controlId":"idAppControl","clearControlAggregation":false},"routes":[{"name":"RouteHUlisting","pattern":"RouteHUlisting/{HUnumber}","target":["TargetHUlisting"]},{"name":"RouteReview","pattern":"RouteReview","target":["Review"]}],"targets":{"TargetHUlisting":{"viewType":"XML","transition":"slide","clearControlAggregation":false,"viewName":"HUlisting","routerClass":"sap.m.routing.Router","async":true,"viewPath":"retailstore.ZRCV_PDT_byHU.view","controlAggregation":"pages","controlId":"idAppControl"},"Review":{"viewType":"XML","viewName":"Review"}}}},"sap.platform.abap":{"uri":"/sap/bc/ui5_ui5/sap/zrcv_pdt_byhu/","_version":"1.1.0"}}
+{
+    "_version": "1.8.0",
+    "sap.app": {
+        "id": "retailstore.ZRCV_PDT_byHU",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "sourceTemplate": {
+            "id": "servicecatalog.connectivityComponentForManifest",
+            "version": "0.0.0"
+        },
+        "dataSources": {
+            "ZRETAILSTORE_RECEIVE_PRODUCT_SRV": {
+                "uri": "/sap/opu/odata/sap/ZRETAILSTORE_RECEIVE_PRODUCT_SRV/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0",
+                    "localUri": "localService/metadata.xml"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        },
+        "supportedThemes": [
+            "sap_hcb",
+            "sap_belize"
+        ]
+    },
+    "sap.ui5": {
+        "rootView": {
+            "viewName": "retailstore.ZRCV_PDT_byHU.view.HUlisting",
+            "type": "XML"
+        },
+        "dependencies": {
+            "minUI5Version": "1.30.0",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.ui.layout": {},
+                "sap.ushell": {
+                    "lazy": false
+                },
+                "sap.retail.store.lib.reuses1": {
+                    "lazy": true
+                }
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "retailstore.ZRCV_PDT_byHU.i18n.i18n"
+                }
+            },
+            "siteModel": {
+                "uri": "/sap/opu/odata/sap/ZRETAILSTORE_RECEIVE_PRODUCT_SRV/",
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "settings": {
+                    "defaultOperationMode": "Server",
+                    "defaultBindingMode": "OneWay",
+                    "defaultCountMode": "Request",
+                    "localUri": "localService/metadata.xml"
+                },
+                "dataSource": "ZRETAILSTORE_RECEIVE_PRODUCT_SRV",
+                "preload": true
+            },
+            "": {
+                "uri": "/sap/opu/odata/sap/ZRETAILSTORE_RECEIVE_PRODUCT_SRV/",
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "settings": {
+                    "defaultOperationMode": "Server",
+                    "defaultBindingMode": "OneWay",
+                    "defaultCountMode": "Request",
+                    "localUri": "localService/metadata.xml"
+                },
+                "dataSource": "ZRETAILSTORE_RECEIVE_PRODUCT_SRV",
+                "preload": true
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "retailstore.ZRCV_PDT_byHU.view",
+                "controlAggregation": "pages",
+                "controlId": "idAppControl",
+                "clearControlAggregation": false
+            },
+            "routes": [
+                {
+                    "name": "RouteHUlisting",
+                    "pattern": "RouteHUlisting/{HUnumber}",
+                    "target": [
+                        "TargetHUlisting"
+                    ]
+                },
+                {
+                    "name": "RouteReview",
+                    "pattern": "RouteReview",
+                    "target": [
+                        "Review"
+                    ]
+                }
+            ],
+            "targets": {
+                "TargetHUlisting": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewName": "HUlisting",
+                    "routerClass": "sap.m.routing.Router",
+                    "async": true,
+                    "viewPath": "retailstore.ZRCV_PDT_byHU.view",
+                    "controlAggregation": "pages",
+                    "controlId": "idAppControl"
+                },
+                "Review": {
+                    "viewType": "XML",
+                    "viewName": "Review"
+                }
+            }
+        }
+    },
+    "sap.platform.abap": {
+        "uri": "/sap/bc/ui5_ui5/sap/zrcv_pdt_byhu/",
+        "_version": "1.1.0"
+    }
+}

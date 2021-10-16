@@ -2,6 +2,48 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "firefox",
+            "request": "attach",
+            "name": "Attach to Firefox",
+            "port": 6000,
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceRoot}",
+            "pathMappings": [
+                {
+                    "url": "http://localhost:8080/localService",
+                    "path": "${workspaceFolder}/webapp/localService"
+                },
+                {
+                    "url": "http://localhost:8080/localService",
+                    "path": "${workspaceFolder}/webapp/localService"
+                },
+                {
+                    "url": "http://localhost:8080/controller",
+                    "path": "${workspaceFolder}/webapp/controller"
+                },
+                {
+                    "url": "http://localhost:8080/Component.js",
+                    "path": "${workspaceFolder}/webapp/Component.js"
+                },
+                {
+                    "url": "http://localhost:8080/Component.js",
+                    "path": "${workspaceFolder}/webapp/Component.js"
+                },
+                {
+                    "url": "http://localhost:8080/controller",
+                    "path": "${workspaceFolder}/uimodule/webapp/controller"
+                },
+                {
+                    "url": "http://localhost:8080",
+                    "path": "${workspaceFolder}/uimodule/webapp"
+                },
+                {
+                    "url": "http://localhost:8080/controller",
+                    "path": "${workspaceFolder}/webapp/controller"
+                }
+            ]
+        },
+        {
             "name": "Start ZRCV_PDT_BYHU",
             "type": "node",
             "request": "launch",
