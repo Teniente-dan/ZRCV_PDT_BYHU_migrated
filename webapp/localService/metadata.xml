@@ -37,6 +37,13 @@
 				<Property Name="STORE_ID" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Plant" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
 				<Property Name="FLAG" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Flag" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
 				<Property Name="TOTAL_ITEM" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Total Material" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<NavigationProperty Name="toMultiTU" Relationship="ZRETAILSTORE_RECEIVE_PRODUCT_SRV.HUInfo_MultiHU" FromRole="FromRole_HUInfo_MultiHU" ToRole="ToRole_HUInfo_MultiHU"/>
+			</EntityType>
+			<EntityType Name="MultiHU" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="TU_ID"/>
+				</Key>
+				<Property Name="TU_ID" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Transport Unit" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
 			</EntityType>
 			<Association Name="TUToHUInoSet" sap:content-version="1">
 				<End Type="ZRETAILSTORE_RECEIVE_PRODUCT_SRV.TUHeader" Multiplicity="1" Role="FromRole_TUToHUInoSet"/>
@@ -50,12 +57,29 @@
 					</Dependent>
 				</ReferentialConstraint>
 			</Association>
+			<Association Name="HUInfo_MultiHU" sap:content-version="1">
+				<End Type="ZRETAILSTORE_RECEIVE_PRODUCT_SRV.HUInfo" Multiplicity="1" Role="FromRole_HUInfo_MultiHU"/>
+				<End Type="ZRETAILSTORE_RECEIVE_PRODUCT_SRV.MultiHU" Multiplicity="*" Role="ToRole_HUInfo_MultiHU"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_HUInfo_MultiHU">
+						<PropertyRef Name="TU_ID"/>
+					</Principal>
+					<Dependent Role="ToRole_HUInfo_MultiHU">
+						<PropertyRef Name="TU_ID"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>			
 			<EntityContainer Name="ZRETAILSTORE_RECEIVE_PRODUCT_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
 				<EntitySet Name="TUHeaders" EntityType="ZRETAILSTORE_RECEIVE_PRODUCT_SRV.TUHeader" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
 				<EntitySet Name="HUInfoSet" EntityType="ZRETAILSTORE_RECEIVE_PRODUCT_SRV.HUInfo" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+				<EntitySet Name="MultiHUSet" EntityType="ZRETAILSTORE_RECEIVE_PRODUCT_SRV.MultiHU" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
 				<AssociationSet Name="TUToHUInoSet" Association="ZRETAILSTORE_RECEIVE_PRODUCT_SRV.TUToHUInoSet" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
 					<End EntitySet="TUHeaders" Role="FromRole_TUToHUInoSet"/>
 					<End EntitySet="HUInfoSet" Role="ToRole_TUToHUInoSet"/>
+				</AssociationSet>
+				<AssociationSet Name="HUInfo_MultiHU" Association="ZRETAILSTORE_RECEIVE_PRODUCT_SRV.HUInfo_MultiHU" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+					<End EntitySet="HUInfoSet" Role="FromRole_HUInfo_MultiHU"/>
+					<End EntitySet="MultiHUSet" Role="ToRole_HUInfo_MultiHU"/>
 				</AssociationSet>
 			</EntityContainer>
 			<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZRETAILSTORE_RECEIVE_PRODUCT_SRV/$metadata"/>

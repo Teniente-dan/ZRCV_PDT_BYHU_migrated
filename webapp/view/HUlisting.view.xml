@@ -1,5 +1,8 @@
-<mvc:View controllerName="retailstore.ZRCV_PDT_byHU.controller.HUlisting" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:u="sap.uxap"
-	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+<mvc:View xmlns:layout="sap.ui.layout" controllerName="retailstore.ZRCV_PDT_byHU.controller.HUlisting"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:u="sap.uxap"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns="sap.m">
 	<App id="idAppControl">
 		<pages>
 			<Page title="{i18n>title}">
@@ -12,15 +15,49 @@
 				</VBox>
 				<content>
 					<VBox id="materials" visible="false" class="sapUiSizeCompact">
-						<ObjectHeader id="TUHeaderInfo" responsive="true" intro="{/TU_ID}" title="{/STORE_DES}{/STORE_ID}" backgroundDesign="Translucent">
+						<!-- <VBox items="{multiTU>/}">
+						<ObjectHeader id="TUHeaderInfo" responsive="true" intro="{multiTU>TU_ID}" title="{multiTU>STORE_DES}{multiTU>STORE_ID}" backgroundDesign="Translucent" condensed="true"> 
+							<attributes>
+								<ObjectAttribute title="{i18n>TotalHu}" text="{multiTU>TOTAL_HU}"/>
+								<ObjectAttribute id="ProcessedHU" title="{i18n>posted}" text="{multiTU>PROCESSED_HU}"/>
+								<ObjectAttribute id="unprocessedHU" title="{i18n>unposted}" text="{multiTU>TRANSIT_HU}"/>
+							</attributes>
+						</ObjectHeader>
+						</VBox> -->
+
+						<!-- <ObjectHeader id="TUHeaderInfo" responsive="true" intro="{/TU_ID}" title="{/STORE_DES}{/STORE_ID}" backgroundDesign="Translucent" condensed="true"> 
 							<attributes>
 								<ObjectAttribute title="{i18n>TotalHu}" text="{/TOTAL_HU}"/>
 								<ObjectAttribute id="ProcessedHU" title="{i18n>posted}" text="{/PROCESSED_HU}"/>
 								<ObjectAttribute id="unprocessedHU" title="{i18n>unposted}" text="{/TRANSIT_HU}"/>
 							</attributes>
-						</ObjectHeader>
+						</ObjectHeader> -->
+						<List backgroundDesign="Solid" items="{multiTU>/}">
+							<items>
+								<CustomListItem >
+								<VBox >
+									<Title text="{multiTU>STORE_DES}{multiTU>STORE_ID}" titleStyle="H4"></Title>
+									<Label text="{multiTU>TU_ID}"></Label>
+									<layout:HorizontalLayout >
+										<layout:content>
+											<ObjectAttribute title="{i18n>TotalHu}" text="{multiTU>TOTAL_HU}"/>
+											<ObjectAttribute id="ProcessedHU" title="{i18n>posted}" text="{multiTU>PROCESSED_HU}"/>
+											<ObjectAttribute id="unprocessedHU" title="{i18n>unposted}" text="{multiTU>TRANSIT_HU}"/>
+										</layout:content>
+									</layout:HorizontalLayout>
+								</VBox>
+								</CustomListItem>
+								<!-- <ObjectListItem id="TUHeaderInfo" intro="{multiTU>TU_ID}" title="{multiTU>STORE_DES}{multiTU>STORE_ID}">
+									<attributes>
+										<ObjectAttribute title="{i18n>TotalHu}" text="{/TOTAL_HU}"/>
+										<ObjectAttribute id="ProcessedHU" title="{i18n>posted}" text="{/PROCESSED_HU}"/>
+										<ObjectAttribute id="unprocessedHU" title="{i18n>unposted}" text="{/TRANSIT_HU}"/>
+									</attributes>
+								</ObjectListItem> -->
+							</items>
+						</List>
 						<FlexBox renderType="Bare" alignItems="Center" justifyContent="Start">
-							<Label id="ScanMaterialLabel" class="sapUiSmallMarginBegin" text="{i18n>HUNumber}"/>
+							<Label id="ScanMaterialLabel" class="sapUiSmallMarginBeginEnd" text="{i18n>HUNumber}"/>
 							<Input id="testScan" change="onHUScanInput" width="{= ${device>/system/phone} ? '40%' : '20%'}"/>
 						</FlexBox>
 						<FlexBox id="messageStrip2" renderType="Bare" alignItems="Center" justifyContent="Start"></FlexBox>
@@ -28,13 +65,17 @@
 							<FlexBox alignItems="Start" justifyContent="Center">
 								<Table id="materialTable2" class="sapUiSizeCompact" updateFinished="setFocus">
 									<columns >
-										<Column ><Text text="{i18n>HUNumber}"/>
+										<Column >
+											<Text text="{i18n>HUNumber}"/>
 										</Column>
-										<Column ><Text text="{i18n>Pieces}"/>
+										<Column >
+											<Text text="{i18n>Pieces}"/>
 										</Column>
-										<Column ><Text text="{i18n>Checked}"/>
+										<Column >
+											<Text text="{i18n>Checked}"/>
 										</Column>
-										<Column hAlign="Center"><Text text="{i18n>Status}"/>
+										<Column hAlign="Center">
+											<Text text="{i18n>Status}"/>
 										</Column>
 									</columns>
 									<items>
