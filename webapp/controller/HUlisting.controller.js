@@ -200,36 +200,42 @@ sap.ui.define(
 					oModel.read(sPath, {
 						success: function (oData) {
 							self._navigationHandler.hideBusyDialog();
-							var TUHeaderModel = new sap.ui.model.json.JSONModel();
-//BORRAR >
+							// var TUHeaderModel = new sap.ui.model.json.JSONModel();
+							//BORRAR >
 							oData = [{
-								TU_ID: '100000000093',
-								CREATED_BY: 'MC_MASTER',
-								LAST_CHANGE_BY: 'MC_MASTER',
-								CREATION_TIMESTAMP: '20,190,722,165,209',
-								LAST_CHANGE_TIMESTAMP: '20,190,722,165,209',
-								STATUS: '002',
-								TOTAL_HU: '10',
-								PROCESSED_HU: '0',
-								TRANSIT_HU: '5',
-								STORE_ID: '0491',
-								STORE_DES: 'test'
-							  },
-							  {
-								TU_ID: '100000000094',
-								CREATED_BY: 'MC_MASTER',
-								LAST_CHANGE_BY: 'MC_MASTER',
-								CREATION_TIMESTAMP: '20,190,722,165,209',
-								LAST_CHANGE_TIMESTAMP: '20,190,722,165,209',
-								STATUS: '002',
-								TOTAL_HU: '10',
-								PROCESSED_HU: '0',
-								TRANSIT_HU: '5',
-								STORE_ID: '0491',
-								STORE_DES: 'test'
-							  }];
-							that.getView().setModel(new JSONModel(oData), "multiTU");
-//BORRAR <
+									TU_ID: '100000000093',
+									CREATED_BY: 'MC_MASTER',
+									LAST_CHANGE_BY: 'MC_MASTER',
+									CREATION_TIMESTAMP: '20,190,722,165,209',
+									LAST_CHANGE_TIMESTAMP: '20,190,722,165,209',
+									STATUS: '002',
+									TOTAL_HU: '10',
+									PROCESSED_HU: '0',
+									TRANSIT_HU: '5',
+									STORE_ID: '0491',
+									STORE_DES: 'test'
+								},
+								{
+									TU_ID: '100000000094',
+									CREATED_BY: 'MC_MASTER',
+									LAST_CHANGE_BY: 'MC_MASTER',
+									CREATION_TIMESTAMP: '20,190,722,165,209',
+									LAST_CHANGE_TIMESTAMP: '20,190,722,165,209',
+									STATUS: '002',
+									TOTAL_HU: '10',
+									PROCESSED_HU: '0',
+									TRANSIT_HU: '5',
+									STORE_ID: '0491',
+									STORE_DES: 'test'
+								}
+							];
+							if (!that.getView().getModel("multiTU")) {
+								that.getView().setModel(new JSONModel(oData), "multiTU");
+							} else {
+								var TUs = that.getView().getModel("multiTU").getData();
+								that.getView().getModel("multiTU").setData(TUs.concat(oData));
+							};
+							//BORRAR <
 							// TUHeaderModel.setData(oData);
 							// that.getOwnerComponent().getModel("TUHeaderModel").setData(oData);
 							// that.getView().byId("TUHeaderInfo").setModel(TUHeaderModel);
@@ -314,10 +320,11 @@ sap.ui.define(
 					var entityData = {
 						TU_ID: "MULTI",
 						HU_EXT: HU,
-						toMultiTU: [
-							{ TU_ID: "xxx" },
-							{ TU_ID: "yyy" }
-						]
+						toMultiTU: this.getView().getModel("multiTU").getData().map(function (e) {
+							return {
+								TU_ID: e.TU_ID
+							};
+						})
 					};
 					var oModel = new sap.ui.model.odata.ODataModel(sServiceUrl, true);
 					self._navigationHandler.showBusyDialog();

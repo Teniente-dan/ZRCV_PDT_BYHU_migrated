@@ -15,24 +15,26 @@
 				</VBox>
 				<content>
 					<VBox id="materials" visible="false" class="sapUiSizeCompact">
-						<!-- <VBox items="{multiTU>/}">
-						<ObjectHeader id="TUHeaderInfo" responsive="true" intro="{multiTU>TU_ID}" title="{multiTU>STORE_DES}{multiTU>STORE_ID}" backgroundDesign="Translucent" condensed="true"> 
-							<attributes>
-								<ObjectAttribute title="{i18n>TotalHu}" text="{multiTU>TOTAL_HU}"/>
-								<ObjectAttribute id="ProcessedHU" title="{i18n>posted}" text="{multiTU>PROCESSED_HU}"/>
-								<ObjectAttribute id="unprocessedHU" title="{i18n>unposted}" text="{multiTU>TRANSIT_HU}"/>
-							</attributes>
-						</ObjectHeader>
-						</VBox> -->
-
-						<!-- <ObjectHeader id="TUHeaderInfo" responsive="true" intro="{/TU_ID}" title="{/STORE_DES}{/STORE_ID}" backgroundDesign="Translucent" condensed="true"> 
-							<attributes>
-								<ObjectAttribute title="{i18n>TotalHu}" text="{/TOTAL_HU}"/>
-								<ObjectAttribute id="ProcessedHU" title="{i18n>posted}" text="{/PROCESSED_HU}"/>
-								<ObjectAttribute id="unprocessedHU" title="{i18n>unposted}" text="{/TRANSIT_HU}"/>
-							</attributes>
-						</ObjectHeader> -->
 						<List backgroundDesign="Solid" items="{multiTU>/}">
+							<items>
+								<CustomListItem >
+									<FlexBox justifyContent="SpaceBetween" wrap="Wrap">
+										<items>
+											<VBox class="sapUiTinyMargin">
+												<Title text="{multiTU>STORE_DES}{multiTU>STORE_ID}" titleStyle="H4" class="sapUiTinyMarginBottom"/>
+												<Label text="{multiTU>TU_ID}" class="sapUiTinyMarginBottom"/>
+											</VBox>
+											<VBox class="sapUiTinyMargin sapUiMediumMarginEnd">
+												<ObjectAttribute title="{i18n>TotalHu}" text="{multiTU>TOTAL_HU}" class="sapUiTinyMarginBottom"/>
+												<ObjectAttribute id="ProcessedHU" title="{i18n>posted}" text="{multiTU>PROCESSED_HU}" class="sapUiTinyMarginBottom"/>
+												<ObjectAttribute id="unprocessedHU" title="{i18n>unposted}" text="{multiTU>TRANSIT_HU}" class="sapUiTinyMarginBottom"/>
+											</VBox>
+										</items>
+									</FlexBox>
+								</CustomListItem>
+							</items>
+						</List>
+						<!-- <List backgroundDesign="Solid" items="{multiTU>/}">
 							<items>
 								<CustomListItem >
 								<VBox >
@@ -47,15 +49,8 @@
 									</layout:HorizontalLayout>
 								</VBox>
 								</CustomListItem>
-								<!-- <ObjectListItem id="TUHeaderInfo" intro="{multiTU>TU_ID}" title="{multiTU>STORE_DES}{multiTU>STORE_ID}">
-									<attributes>
-										<ObjectAttribute title="{i18n>TotalHu}" text="{/TOTAL_HU}"/>
-										<ObjectAttribute id="ProcessedHU" title="{i18n>posted}" text="{/PROCESSED_HU}"/>
-										<ObjectAttribute id="unprocessedHU" title="{i18n>unposted}" text="{/TRANSIT_HU}"/>
-									</attributes>
-								</ObjectListItem> -->
 							</items>
-						</List>
+						</List>						 -->
 						<FlexBox renderType="Bare" alignItems="Center" justifyContent="Start">
 							<Label id="ScanMaterialLabel" class="sapUiSmallMarginBeginEnd" text="{i18n>HUNumber}"/>
 							<Input id="testScan" change="onHUScanInput" width="{= ${device>/system/phone} ? '40%' : '20%'}"/>
