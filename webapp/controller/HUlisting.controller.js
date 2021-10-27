@@ -236,10 +236,19 @@ sap.ui.define(
 								}
 							];
 							if (!that.getView().getModel("multiTU")) {
-								that.getView().setModel(new JSONModel([oData]), "multiTU");
+								that.getView().setModel(new JSONModel(oData), "multiTU");
 							} else {
 								var TUs = that.getView().getModel("multiTU").getData();
-								that.getView().getModel("multiTU").setData(TUs.concat(oData));
+								const updateTUs = (arrTUs, newTU) => {
+									var foundTU = arrTUs.findIndex( e => e.TU_ID === newTU.TU_ID && e.STORE_ID === newTU.STORE_ID);
+									if(foundTU > -1){
+										arrTUs[foundTU] = newTU;
+									}else{
+										arrTUs.push(newTU);
+									}
+									return arrTUs;
+								};
+								that.getView().getModel("multiTU").setData(updateTUs(TUs, oData));
 							};
 							//BORRAR <
 							// TUHeaderModel.setData(oData);
