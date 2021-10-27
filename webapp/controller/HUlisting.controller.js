@@ -85,11 +85,17 @@ sap.ui.define(
 					var sPath = "/TUHeaders('" + TU + "')";
 					oModel.read(sPath, {
 						success: function (oData) {
-							var TUHeaderModel = new sap.ui.model.json.JSONModel();
+							// var TUHeaderModel = new sap.ui.model.json.JSONModel();
 
-							TUHeaderModel.setData(oData);
-							that.getView().byId("TUHeaderInfo").setModel(TUHeaderModel);
-
+							// TUHeaderModel.setData(oData);
+							// that.getView().byId("TUHeaderInfo").setModel(TUHeaderModel);
+							if (!that.getView().getModel("multiTU")) {
+								// that.getView().setModel(new JSONModel([oData]), "multiTU");
+								that.getView().setModel(new JSONModel(oData), "multiTU");
+							} else {
+								var TUs = that.getView().getModel("multiTU").getData();
+								that.getView().getModel("multiTU").setData(TUs.concat(oData));
+							};
 							if (!materialSection.getVisible()) {
 								materialSection.setVisible(true);
 							}
@@ -230,7 +236,7 @@ sap.ui.define(
 								}
 							];
 							if (!that.getView().getModel("multiTU")) {
-								that.getView().setModel(new JSONModel(oData), "multiTU");
+								that.getView().setModel(new JSONModel([oData]), "multiTU");
 							} else {
 								var TUs = that.getView().getModel("multiTU").getData();
 								that.getView().getModel("multiTU").setData(TUs.concat(oData));
